@@ -1,0 +1,31 @@
+{
+	"name": "pipelineLS",
+	"properties": {
+		"activities": [
+			{
+				"name": "Spark1",
+				"type": "HDInsightSpark",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"rootPath": "com.microsoft.dqx.mergeTable",
+					"entryFilePath": "dqx-1.0-SNAPSHOT.jar",
+					"sparkJobLinkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "HDInsightLinkedservice",
+					"type": "LinkedServiceReference"
+				}
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
