@@ -1,6 +1,7 @@
 {
 	"name": "pipelineLS",
 	"properties": {
+		"description": "Adding Comment",
 		"activities": [
 			{
 				"name": "Spark1",
